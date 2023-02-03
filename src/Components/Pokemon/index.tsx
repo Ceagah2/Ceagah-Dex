@@ -1,8 +1,45 @@
-import React from 'react';
 import styled from 'styled-components';
 
-const Pokemon: React.FC = () => {
-  return <S.Container />;
+import { useEffect, useState } from 'react';
+
+import api from '../../service/api';
+
+interface DataProps {
+  name: string;
+  url: string;
+  data?: Object;
+}
+
+interface Pokeprops {
+  name: string;
+  sprite: string;
+  dexNumber: number;
+  baseExp: number;
+  weight: number;
+  height: number;
+  types: Array<string>;
+  baseStats: Array<number>;
+}
+
+
+const Pokemon  = (data: DataProps) => {
+  const[pokeDetails, setPokeDetails] = useState<Pokeprops[]>([]);
+  const path = data.url.split('/')
+  const dexNumber = path[6]
+
+  useEffect(() => {
+    api.get(`/${dexNumber}/`).then(
+      (response) => {
+        setPokeDetails(response.data);
+      }
+    )
+  })
+
+  console.log('pokemon data props:', pokeDetails[0])
+
+  return (
+    <span>{data.name}</span>
+  )
 }
 
 
