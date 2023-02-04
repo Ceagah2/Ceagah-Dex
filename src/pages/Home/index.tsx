@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import Pokemon from '../../Components/Pokemon';
 // import Pokemon from '../../Components/Pokemon';
 import api from '../../service/api';
-import { Container, Footer, Header, Section } from './styles';
+import { Container, Footer, Header, HeaderTitle, Section } from './styles';
 
 interface Pokeprops {
   name: string;
@@ -20,7 +20,11 @@ const Home = () => {
 
   return(
     <Container>
-      <Header>Tekever Pokedex</Header>
+      <Header>
+        <HeaderTitle>
+          Tekever Pokedex
+        </HeaderTitle>
+      </Header>
       <Section>
         {pokemons.map((pokemon) => (
           <Pokemon key={pokemon.name} url={pokemon.url} name={pokemon.name} />
