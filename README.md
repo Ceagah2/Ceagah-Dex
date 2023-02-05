@@ -39,7 +39,7 @@ or
 `npm run dev`  
 
 This command will run the the application, and opening the [localhost](https://127.0.0.1:5173) at the port ***5173***
-<img src="./.vscode/terminal.png"/>
+<img src="./.vscode/terminal.png"/>  
 You just need to open your browser and access this link, and you will navigate through the application. YOU'RE IN !
 
 ### Final Thoughts
