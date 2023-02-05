@@ -21,22 +21,22 @@ To work in this project, I've choose the follow technologies:
 ### How to run the application locally
 
 To run the application locally you should first clone the repo. In order to do this, you need to open your terminal, choose where you want to clone the repo, then run :
-`git clone https://github.com/Ceagah/takever-front-end-test.git`
-or
-`git@github.com:Ceagah/takever-front-end-test.git`
+`git clone https://github.com/Ceagah/takever-front-end-test.git`  
+or  
+`git@github.com:Ceagah/takever-front-end-test.git`  
 
 Then you need to get into this new folder in your local machine, just typing:
-`cd takever-front-end-test`
+`cd takever-front-end-test`  
 
 Once you're into the test folder, you should install all the dependencies packages running
-`yarn`
-or
+`yarn`  
+or  
 `npm i` or `npm install`
 
 When the dependencies are installed, you should run the last command at the terminal, that is :
-`yarn dev`
-or
-`npm run dev`
+`yarn dev`  
+or  
+`npm run dev`  
 
 This command will run the the application, and opening the [localhost](https://127.0.0.1:5173) at the port ***5173***
 <img src="./.vscode/terminal.png"/>
