@@ -7,6 +7,7 @@ interface DataProps {
   name: string;
   url: string;
   data?: Object;
+  onClick: () => void;
 }
 
 interface Pokeprops {
@@ -40,14 +41,12 @@ const Pokemon  = (data: DataProps) => {
       }
     )
   })
-
-
   if(pokemonData === null){
     return <></>
   }
 
   return (
-    <S.Container backgroundColor={pokemonMainType} >
+    <S.Container backgroundColor={pokemonMainType} onClick={data.onClick}>
       <S.PokemonSprite src={pokemonData?.sprites?.front_default} />
       <S.PokemonName>
         {data.name.toUpperCase()}
