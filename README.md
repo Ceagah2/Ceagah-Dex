@@ -44,17 +44,17 @@ You just need to open your browser and access this link, and you will navigate t
 
 ### Test Check list
 
-[x] Use React
-[x] Use React hooks, router and state management
-[x] Consume Api
-[x] Create all pages and components
-[x] Create pagination
-[x] Handle fav pokemons
-[x] Use localStorage to handle fav pokemons
-[x] Add comment in code, to explain some parts
-[x] Responsive application
-[x] Create a README with some information about the test
-[ ] Unit tests.
+[x] Use React  
+[x] Use React hooks, router and state management  
+[x] Consume Api  
+[x] Create all pages and components  
+[x] Create pagination  
+[x] Handle fav pokemons  
+[x] Use localStorage to handle fav pokemons  
+[x] Add comment in code, to explain some parts  
+[x] Responsive application  
+[x] Create a README with some information about the test  
+[ ] Unit tests.  
 
 ### Final Thoughts
 
