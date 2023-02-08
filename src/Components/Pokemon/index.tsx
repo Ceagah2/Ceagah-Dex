@@ -6,8 +6,8 @@ import { colors, sizes } from '../../styles/themes';
 interface DataProps {
   name: string;
   url: string;
-  data?: Object;
-  onClick: () => void;
+  data: Object;
+  onClick?: () => void;
 }
 
 interface Pokeprops {
@@ -31,7 +31,7 @@ const Pokemon  = (data: DataProps) => {
   const dexNumber = path[6];
 
   useEffect(() => {
-    api.get(`/${dexNumber}/`).then(
+    api.get(`pokemon/${dexNumber}/`).then(
       (response) => {
         setPokemonData(response.data);
         setPokemonMainType(response.data.types[0].type.name);

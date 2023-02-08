@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { colors, sizes } from '../../styles/themes';
+import styled from "styled-components";
+import { colors, sizes } from './../../styles/themes';
 
 export const Container = styled.main`
   width: 100%;
@@ -41,22 +41,28 @@ export const Section = styled.section`
 
 export const Footer = styled.footer`
   width: 100%;
-  height: 5vh;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
-
-export const FavButton = styled.button`
+export const BackButton = styled.button`
   width: 40%;
   height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border: none;
   border-radius: 50px;
   cursor: pointer;
   background-color: ${colors["bug"]};
+  
   :hover {
     background-color: ${colors["grass"]};
   }
 `;
 
-export const FavButtonText = styled.span`
+export const BackButtonText = styled.span`
   color: ${colors["dark"]};
   font-size: ${sizes["large"]};
   font-weight: bold;

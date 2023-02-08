@@ -8,7 +8,6 @@ import api from '../../service/api';
 import { colors, sizes } from '../../styles/themes';
 
 interface Pokeprops {
-  data: Object;
   name: string;
   sprites: string;
   id: number;
@@ -21,7 +20,7 @@ interface Pokeprops {
 }
 
 
-const PokeDetails = (data:Pokeprops) => {
+const PokeDetails = () => {
   const [pokemonData, setPokemonData] = useState<Pokeprops>();
   const [pokemonMainType, setPokemonMainType] = useState<string>();
   const [isFavorite, setIsFavorite] = useState<boolean>();
@@ -31,39 +30,37 @@ const PokeDetails = (data:Pokeprops) => {
   const Pokename = path[4];
   const navigate = useNavigate()
 
-  console.log(pokemonData)
-  useEffect(() => {
-    api.get(`/${Pokename}/`).then(
-      (response) => {
-        setPokemonData(response.data);
-        setPokemonMainType(response.data.types[0].type.name);
-      }
-    )
-    checkFavoritePokemon()
-  },[])
+const checkFavoritePokemon = (id: number) => {
+  const favPokeIds = JSON.parse(localStorage.getItem("favPokeIds")) || [];
+setIsFavorite(favPokeIds.includes(id));
+}
 
-  const checkFavoritePokemon = () => {
-    const hasItem = localStorage.getItem('favPokeId');
-    if(hasItem === null || hasItem === undefined){
-      setIsFavorite(false)
-    }
+useEffect(() => {
+  api.get(`/pokemon/${Pokename}/`).then(
+  (response) => {
+  setPokemonData(response.data);
+  setPokemonMainType(response.data.types[0].type.name);
+  checkFavoritePokemon(response.data.id);
+})},[])
+
+const handleFavorite = () => {
+  const favPokeIds = JSON.parse(localStorage.getItem("favPokeIds")) || [];
+  const currentPokemonId = pokemonData?.id;
+  const alreadyAdded = favPokeIds.includes(currentPokemonId);
+  if (!alreadyAdded) {
+    favPokeIds.push(currentPokemonId);
+    localStorage.setItem("favPokeIds", JSON.stringify(favPokeIds));
+    setIsFavorite(true);
+    alert("Your pokemon is added to favorite!");
+  } else {
+    setIsFavorite(false);
+    localStorage.setItem(
+      "favPokeIds",
+      JSON.stringify(favPokeIds.filter((id:number) => id !== currentPokemonId))
+    );
+    alert("Your pokemon was removed from favorite!");
   }
-
-  const handleFavorite = () => {
-    const hasItem = localStorage.getItem('favPokeId');
-    if(hasItem === null || hasItem === undefined){
-      console.log('caiu no if');
-      localStorage.setItem('favPokeId', pokemonData?.id)
-      setIsFavorite(true)
-      alert('Your pokemon is added to favorite!')
-    } else {
-      console.log('caiu no else');
-      localStorage.removeItem('favPokeId');
-      setIsFavorite(false)
-      alert('Your pokemon was removed from favorite!')
-    }
-  }
-
+};
 
   if(pokemonData === null){
     return <></>
