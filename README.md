@@ -58,5 +58,5 @@ You just need to open your browser and access this link, and you will navigate t
 
 ### Final Thoughts
 
-This code test is challenging at the point that i should consume the pokemon api. This api is very well structured, and there is a lot of information. To render all the data, you should pass some parameters to the componentes, render them , and later show it.
+This code test is challenging at the point that i should consume the pokemon api. This api is very well structured, and there is a lot of information. To render all the data, you should pass some parameters to the components, render them , and later show it.
 To render the pokemon data, you should dive into the props coming from the api, there is a lot of objects into other objects. BUT at the end, it's real cool and I 've learned a lot with it.
