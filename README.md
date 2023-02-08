@@ -6,7 +6,7 @@
 
 This test was made to show my front end skills to Takever company, as a first step for the front end job interview.
 
-Here you will see how I've consumed and rendered the data from the [PokeApi]('https://pokeapi.co/api'), make the pagination to show all the 742 existing pokemons, in step by 20, and render some information about then in another screen.
+Here you will see how I've consumed and rendered the data from the [PokeApi]('https://pokeapi.co/api'), make the pagination to show all the 1279 existing pokemons, in step by 20, and render some information about then in another screen.
 
 ### Techs used
 
@@ -41,6 +41,20 @@ or
 This command will run the the application, and opening the [localhost](https://127.0.0.1:5173) at the port ***5173***
 <img src="./.vscode/terminal.png"/>  
 You just need to open your browser and access this link, and you will navigate through the application. YOU'RE IN !
+
+### Test Check list
+
+[x] Use React
+[x] Use React hooks, router and state management
+[x] Consume Api
+[x] Create all pages and components
+[x] Create pagination
+[x] Handle fav pokemons
+[x] Use localStorage to handle fav pokemons
+[x] Add comment in code, to explain some parts
+[x] Responsive application
+[x] Create a README with some information about the test
+[ ] Unit tests.
 
 ### Final Thoughts
 
