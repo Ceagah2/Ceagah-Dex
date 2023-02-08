@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import Pokemon from '../../Components/Pokemon';
 import api from '../../service/api';
 
-import { BackButton, BackButtonText, Container, Footer, Header, HeaderTitle, Section } from './styles';
+import { BackButton, BackButtonText, Container, Header, HeaderTitle, Section } from './styles';
 
 const Favorites  = () => {
   const [favPokeIds, setFavPokeIds] = useState<string[]>()
@@ -32,27 +32,25 @@ return (
     <Header>
       <HeaderTitle>Favorite pokemons</HeaderTitle>
     </Header>
-    <Section>
-              {favPokeIds && favPokeIds.map((id, index) => ( pokemonNames[index] && (
-            <Pokemon
-              key={id}
-              url={`https://pokeapi.co/api/v2/pokemon/${id}/`}
-              name={pokemonNames[index]}
-              onClick={() => navigation(`/details/${id}`)} 
-              data={undefined}
-            />
-          )
-        ))}
-    </Section>
-
-    <Footer>
-      <BackButton onClick={() => navigation('/')}>
+    <BackButton onClick={() => navigation('/')}>
         <CgPokemon size={24} />
         <BackButtonText>
           Back to home
         </BackButtonText>
       </BackButton>
-    </Footer>
+    <Section>
+      {favPokeIds && favPokeIds.map((id, index) => ( pokemonNames[index] && (
+        <Pokemon
+          key={id}
+          url={`https://pokeapi.co/api/v2/pokemon/${id}/`}
+          name={pokemonNames[index]}
+          onClick={() => navigation(`/details/${id}`)} 
+          data={undefined}
+        />
+      )
+    ))}
+    </Section>
+
   </Container>
 );
 }

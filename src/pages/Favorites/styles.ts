@@ -39,13 +39,6 @@ export const Section = styled.section`
   align-items: center;
 `;
 
-export const Footer = styled.footer`
-  width: 100%;
-  height: 10vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
 export const BackButton = styled.button`
   width: 40%;
   height: 40px;

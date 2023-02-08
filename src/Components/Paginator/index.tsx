@@ -31,13 +31,13 @@ const Paginator = ({total, limit, offset, setOffset}:PaginationProps) => {
   return(
     <S.Container>
       <S.ContainerList>
-        <S.ListItem>
           <S.PrevAndNextButton
             onClick={() => onPageChange(current - 1)}
             disabled={current === 1}
           >
           Previous
         </S.PrevAndNextButton>
+        <S.ListItem>
         </S.ListItem>
         {Array.from({ length: Math.min(MAX_ITEMS, pages) })
         .map((_,index) => index + first)
@@ -49,13 +49,13 @@ const Paginator = ({total, limit, offset, setOffset}:PaginationProps) => {
           </S.ListItem>
         ))}
           <S.ListItem>
+        </S.ListItem>
           <S.PrevAndNextButton
             onClick={() => onPageChange(current + 1)}
             disabled={current === pages}
           >
           Next
         </S.PrevAndNextButton>
-        </S.ListItem>
       </S.ContainerList>
     </S.Container>
   );
@@ -69,17 +69,26 @@ const S = {
     align-items: center;
   `,
   ContainerList: styled.ul`
-    width: 30%;
+    width: 40%;
     display: flex;
     justify-content: space-around;
+    align-items: center;
+
+    @media(max-width: 550px){
+      width: 90vw;
+  }
   `,
   ListItem: styled.li`
     list-style: none;
+    @media(max-width: 550px){
+      display: none;
+    }
+  
   `,
   Button: styled.button`
-    width: 20px;
-    height: 20px;
-    border-radius: 10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
     cursor: pointer;
     border: none;
     transition: background ease-in-out .1s linear;

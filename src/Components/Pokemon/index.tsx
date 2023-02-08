@@ -86,6 +86,7 @@ const S = {
 
     @media(max-width: 1420px){
       width: 15vw;
+      height: 35vh;
     }
 
     @media(max-width: 900px){

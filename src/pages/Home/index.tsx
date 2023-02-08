@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import Paginator from '../../Components/Paginator';
 import Pokemon from '../../Components/Pokemon';
 import api from '../../service/api';
-import { Container, FavButton, FavButtonText, Footer, Header, HeaderTitle, Section } from './styles';
+import { Container, FavButton, FavButtonText, FavButtonTextSmall, Header, HeaderTitle, Section } from './styles';
 
 interface Pokeprops {
   name: string;
@@ -35,20 +35,22 @@ const Home = () => {
         <HeaderTitle>
           Tekever Pokedex
         </HeaderTitle>
+        
       </Header>
+      <FavButton onClick={() => navigation('/favorites')}>
+          <FavButtonText>
+            Check your favorite pokemons !
+          </FavButtonText>
+          <FavButtonTextSmall>
+            Fav Pokemons
+          </FavButtonTextSmall>
+      </FavButton>
+      <Paginator setOffset={setOffSet} limit={LIMIT} total={TOTAL} offset={offSet}/>
       <Section>
         {pokemons.map((pokemon) => (
           <Pokemon key={pokemon.name} url={pokemon.url} name={pokemon.name} data={pokemon} onClick={() => navigation(`/details/${pokemon.name}`)}/>
         ))}
       </Section>
-      <FavButton onClick={() => navigation('/favorites')}>
-        <FavButtonText>
-          Check your favorite pokemons !
-        </FavButtonText>
-      </FavButton>
-      <Footer>
-        <Paginator setOffset={setOffSet} limit={LIMIT} total={TOTAL} offset={offSet}/>
-      </Footer>
     </Container>
   );
 }

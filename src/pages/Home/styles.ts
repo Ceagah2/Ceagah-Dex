@@ -39,11 +39,6 @@ export const Section = styled.section`
   align-items: center;
 `;
 
-export const Footer = styled.footer`
-  width: 100%;
-  height: 5vh;
-`;
-
 export const FavButton = styled.button`
   width: 40%;
   height: 40px;
@@ -51,6 +46,16 @@ export const FavButton = styled.button`
   border-radius: 50px;
   cursor: pointer;
   background-color: ${colors["bug"]};
+  
+  @media(max-width: 1420px){
+      width: 20vw;
+  }
+  @media(max-width: 700px){
+      width: 25vw;
+  }
+  @media(max-width: 550px){
+      width: 50vw;
+  }
   :hover {
     background-color: ${colors["grass"]};
   }
@@ -60,4 +65,17 @@ export const FavButtonText = styled.span`
   color: ${colors["dark"]};
   font-size: ${sizes["large"]};
   font-weight: bold;
+  
+  @media(max-width: 1420px){
+      display: none;
+  }
+`
+export const FavButtonTextSmall = styled.span`
+  color: ${colors["dark"]};
+  font-size: ${sizes["large"]};
+  font-weight: bold;
+  display:none;
+    @media(max-width: 1420px){
+      display: block;
+  }
 `
