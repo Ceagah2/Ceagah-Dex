@@ -60,7 +60,7 @@ const Pokemon  = (data: DataProps) => {
 
 type styleProps = {
   borderColor: string;
-  backgroundColor: string;
+  backgroundColor: any;
   color: string;
 }
 const S = {
